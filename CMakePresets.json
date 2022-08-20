@@ -1,0 +1,59 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 22,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "lnx-base",
+      "hidden": true,
+      "displayName": "Base configuration",
+      "generator": "Ninja",
+      "cacheVariables": {
+        "CMAKE_CXX_COMPILER": "clang++",
+        "CMAKE_C_COMPILER": "clang",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": true,
+        "CMAKE_CXX_STANDARD": "20"
+      },
+      "condition": {
+        "type": "equals",
+        "lhs": "${hostSystemName}",
+        "rhs": "Linux"
+      }
+    },
+    {
+      "name": "dbg",
+      "inherits": "lnx-base",
+      "displayName": "Linux Debug",
+      "binaryDir": "${sourceDir}/Build/Debug",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug",
+        "CMAKE_CXX_FLAGS": "-g -O0",
+        "OUTPUT_DIR": "${sourceDir}/Outputs/Debug"
+      }
+    },
+    {
+      "name": "rls",
+      "inherits": "lnx-base",
+      "displayName": "Linux Release",
+      "binaryDir": "${sourceDir}/Build/Release",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Release",
+        "CMAKE_CXX_FLAGS": "-O3",
+        "OUTPUT_DIR": "${sourceDir}/Outputs/Release"
+      }
+    },
+    {
+      "name": "cov",
+      "inherits": "rls",
+      "displayName": "Linux Coverage",
+      "binaryDir": "${sourceDir}/Build/Coverage",
+      "cacheVariables": {
+        "CMAKE_CXX_FLAGS": "-O3 -fprofile-instr-generate -fcoverage-mapping",
+        "OUTPUT_DIR": "${sourceDir}/Outputs/Coverage"
+      }
+    }
+  ]
+}
