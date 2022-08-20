@@ -12,7 +12,7 @@ add_dependencies ("BoilerPlateTest" "BoilerPlate.Library")
 
 set_target_properties ("BoilerPlateTest" PROPERTIES
         INCLUDE_DIRECTORIES      "${CMAKE_SOURCE_DIR}/Headers"
-        LINK_DIRECTORIES         "${CMAKE_SOURCE_DIR}/Outputs/Coverage"
+        LINK_DIRECTORIES         "${OUTPUT_DIR}"
         LINK_LIBRARIES           "gtest;gtest_main;boilerplate"
         LIBRARY_OUTPUT_NAME      "${OUTPUT_NAME}"
         ARCHIVE_OUTPUT_NAME      "${OUTPUT_NAME}"

@@ -8,7 +8,7 @@ add_library ("BoilerPlate.Library" STATIC ${SOURCES})
 
 set_target_properties ("BoilerPlate.Library" PROPERTIES
         INCLUDE_DIRECTORIES      "${CMAKE_SOURCE_DIR}/Headers"
-        LINK_DIRECTORIES         "${CMAKE_SOURCE_DIR}/Outputs/${CMAKE_BUILD_TYPE}"
+        LINK_DIRECTORIES         "${OUTPUT_DIR}"
         LINK_LIBRARIES           ""
         COMPILE_OPTIONS          ""
         LIBRARY_OUTPUT_NAME      "${OUTPUT_NAME}"
