@@ -1,3 +1,16 @@
+## Rationale
+
+This project contains 4 directories :
+
+| Directory  | Usage                                           |
+|------------|-------------------------------------------------|
+| Benchmarks | Contains benchmarking executables               |
+| Headers    | Contains all C++ library headers                |
+| Sources    | Contains all C++ library and executable sources |
+| Tests      | Contains testing executables                    |
+
+All the project is built around CMake. Therefore, for each target, there is a CMakeLists.txt file responsible for declaring all the attributes related to this target. 
+
 ## How to build
 
 1. Clone the repository then change your current working directory to it

@@ -3,7 +3,7 @@
 
 static void Foo(benchmark::State& state)
 {
-    for (auto _ : state)
+    for ([[maybe_unused]] auto _ : state)
     {
         BoilerPlate::Foo(1, 2);
     }
@@ -11,7 +11,7 @@ static void Foo(benchmark::State& state)
 
 static void Bar(benchmark::State& state)
 {
-    for (auto _ : state)
+    for ([[maybe_unused]] auto _ : state)
     {
         BoilerPlate::Bar(1, 2);
     }

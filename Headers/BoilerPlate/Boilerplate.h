@@ -1,5 +1,5 @@
-#ifndef __BOILERPLATE__
-#define __BOILERPLATE__
+#ifndef BOILERPLATE_H
+#define BOILERPLATE_H
 
 namespace BoilerPlate
 {
@@ -20,4 +20,4 @@ namespace BoilerPlate
     int Bar(int a, int b);
 }
 
-#endif // __BOILERPLATE__
+#endif // BOILERPLATE_H
